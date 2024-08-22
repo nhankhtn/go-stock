@@ -1,0 +1,79 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 12px;
+  width: 260px;
+}
+.heading {
+  font-size: 32px;
+  font-weight: 400;
+  text-align: center;
+}
+.form-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.form-item label {
+  font-size: 0.8rem;
+}
+.form-item input {
+  font-size: var(--font-size);
+  background-color: #fff;
+  color: #000;
+  height: 40px;
+  padding-left: 8px;
+  border-radius: 4px;
+}
+.password-wrapper {
+  position: relative;
+  & input {
+    width: 100%;
+  }
+}
+.toggle-password {
+  position: absolute;
+  top: 9px;
+  right: 8px;
+  font-size: 1rem;
+  background-color: transparent;
+  border: none;
+  color: #000;
+}
+.message-error {
+  font-size: 0.75rem;
+  color: red;
+}
+.more-info {
+  display: flex;
+  font-weight: 500;
+  font-size: 0.8rem;
+  color: #002cc8;
+  justify-content: space-between;
+}
+.btn-submit {
+  margin-top: 8px;
+  background-color: #3e3a53;
+}
+.loading {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  font-size: 28px;
+  animation: spinner 0.8s linear infinite;
+  color: #fff;
+}
+
+@keyframes spinner {
+  from {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
+// Theme dark
+.wrapper.dark {
+  color: #fff;
+}

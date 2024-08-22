@@ -1,7 +1,50 @@
 .container {
   display: flex;
-  height: 100vh;
 }
 .main-content {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.wrapper {
+  background-color: rgb(var(--background-light-color));
+  flex: 1;
+  padding: var(--gap);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+.heading {
+  font-size: 1.3rem;
+}
+.stats-overview,
+.chart-section,
+.watchlist {
+  border-radius: var(--border-radius);
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.stats-overview {
+  min-height: 142px;
+}
+.wrapper-content {
+  display: flex;
+  flex: 1;
+  gap: var(--gap);
+}
+.chart-section {
+  flex: 1;
+}
+.watchlist {
+  min-width: 260px;
+}
+// Theme dark
+.wrapper.dark {
+  background-color: #1f2a51 !important;
+  color: var(--color-dark) !important;
+  & .stats-overview,
+  & .chart-section,
+  & .watchlist {
+    background-color: var(--bg-dark);
+  }
 }

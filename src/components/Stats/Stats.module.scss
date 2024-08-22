@@ -1,0 +1,59 @@
+.wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding: 0 28px;
+  justify-content: space-between;
+}
+
+// Stats Card
+.stats-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.stats-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  gap: 12px;
+}
+.logo {
+}
+.name {
+}
+.chart {
+  width: 100px;
+  height: 40px;
+}
+.stats-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.item-content {
+  display: flex;
+}
+.title {
+  flex: 1;
+  color: #666;
+  font-size: 0.9rem;
+}
+.data {
+  font-weight: 600;
+  &.up {
+    color: rgb(var(--success-color));
+  }
+  &.down {
+    color: rgb(var(--red-color));
+  }
+  & .icon-up-down {
+    margin-left: 8px;
+    margin-right: 4px;
+  }
+}
+.dark {
+  & .title {
+    color: var(--color-dark);
+  }
+}

@@ -1,0 +1,77 @@
+.wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: var(--gap);
+}
+.heading {
+  display: flex;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e5e5e5;
+}
+.brand {
+  flex: 1;
+  margin-left: 20px;
+}
+.name {
+  font-size: 1.3rem;
+}
+.short-name {
+  opacity: 0.8;
+  font-size: 0.8rem;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+.stats {
+  display: flex;
+  gap: 8px;
+}
+.rate {
+  display: flex;
+  align-items: center;
+  padding: 0 6px;
+  background-color: rgb(var(--red-color));
+  color: #fff;
+  border-radius: 24px;
+  font-size: 0.6rem;
+}
+.price {
+  font-size: 1.2rem;
+}
+.date {
+  color: #666;
+  font-size: 0.8rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.wrapper-btn {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
+
+  & button {
+    padding: 6px 0;
+    font-size: 0.8rem;
+    color: #666;
+    min-width: 60px !important;
+  }
+}
+.wrapper-chart {
+  flex: 1;
+}
+// Theme dark
+.dark {
+  & .date {
+    color: var(--color-dark);
+  }
+}

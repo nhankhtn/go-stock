@@ -7,23 +7,29 @@
 
   --height-header: 90px;
   --width-sidebar: 200px;
+  --gap: 24px;
 
   --background-color: 256, 256, 256; // Màu nền chính
+  --background-light-color: 245, 247, 249;
+  --red-color: 250, 0, 0;
   --primary-text-color: 29, 29, 29; // Màu đen đậm, dùng cho văn bản chính
-  --secondary-text-color: 160, 161, 161; // Màu xám nhạt, dùng cho văn bản phụ
-  --muted-text-color: 96, 97, 97; // Màu xám trung bình, dùng cho các thông tin ít nổi bật
-  --success-color: 51, 177, 153; // Màu xanh lá cây, dùng cho trạng thái thành công
-  --success-light-color: 163, 217, 209; // Màu xanh lá cây nhạt, dùng cho các yếu tố thành công nhẹ
+  // --secondary-text-color: 160, 161, 161; // Màu xám nhạt, dùng cho văn bản phụ
+  // --muted-text-color: 96, 97, 97; // Màu xám trung bình, dùng cho các thông tin ít nổi bật
+  --success-color: 0, 128, 0; // Màu xanh lá cây, dùng cho trạng thái thành công
+  // --success-light-color: 163, 217, 209; // Màu xanh lá cây nhạt, dùng cho các yếu tố thành công nhẹ
   --danger-color: 239, 93, 95; // Màu đỏ nhạt, dùng cho trạng thái nguy hiểm hoặc lỗi
-  --success-accent-color: 106, 202, 172; // Màu xanh lá cây nhạt, dùng cho các yếu tố phụ liên quan đến thành công
-  --success-dark-color: 76, 183, 163; // Màu xanh lá cây trung bình, dùng cho các yếu tố thành công tối hơn
-  --warning-color: 240, 160, 160; // Màu hồng nhạt, dùng cho cảnh báo nhẹ
-  --danger-dark-color: 228, 46, 45; // Màu đỏ đậm, dùng cho cảnh báo nghiêm trọng
-  --positive-color: 28, 213, 93; // Màu xanh lá cây sáng, dùng cho trạng thái tích cực
-  --navy-color: 11, 35, 119; // Màu xanh dương đậm, dùng cho các yếu tố chính (ví dụ tiêu đề)
-  --info-color: 16, 151, 234; // Màu xanh dương sáng, dùng cho các thông tin bổ trợ
-  --info-accent-color: 9, 110, 215; // Màu xanh dương đậm hơn, dùng cho thông tin chi tiết
-  --deep-navy-color: 8, 47, 133; // Màu xanh dương rất đậm, dùng cho nền hoặc các yếu tố tối màu
+  // --success-accent-color: 106, 202, 172; // Màu xanh lá cây nhạt, dùng cho các yếu tố phụ liên quan đến thành công
+  // --success-dark-color: 76, 183, 163; // Màu xanh lá cây trung bình, dùng cho các yếu tố thành công tối hơn
+  // --warning-color: 240, 160, 160; // Màu hồng nhạt, dùng cho cảnh báo nhẹ
+  // --danger-dark-color: 228, 46, 45; // Màu đỏ đậm, dùng cho cảnh báo nghiêm trọng
+  // --positive-color: 28, 213, 93; // Màu xanh lá cây sáng, dùng cho trạng thái tích cực
+  // --navy-color: 11, 35, 119; // Màu xanh dương đậm, dùng cho các yếu tố chính (ví dụ tiêu đề)
+  // --info-color: 16, 151, 234; // Màu xanh dương sáng, dùng cho các thông tin bổ trợ
+  // --info-accent-color: 9, 110, 215; // Màu xanh dương đậm hơn, dùng cho thông tin chi tiết
+  // --deep-navy-color: 8, 47, 133; // Màu xanh dương rất đậm, dùng cho nền hoặc các yếu tố tối màu
+
+  --bg-dark: #3e4364;
+  --color-dark: #c8bbbb;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -82,7 +88,15 @@ a {
   color: inherit;
   text-decoration: none;
 }
-
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+  box-shadow: 0 0 0px 1000px white inset !important;
+  -webkit-text-fill-color: black !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

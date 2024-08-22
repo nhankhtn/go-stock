@@ -2,19 +2,7 @@ import Link from "next/link";
 import React from "react";
 
 import styles from "./Button.module.scss";
-
-interface ButtonProps {
-  children: React.ReactNode;
-  to?: string;
-  href?: string;
-  leftIcon?: React.ReactNode;
-  rightIcon?: React.ReactNode;
-  className?: string;
-  disabled?: boolean;
-  active?: boolean;
-  onClick?: () => void;
-  [key: string]: any;
-}
+import { IButton } from "@/_types_";
 
 export default function Button({
   children,
@@ -26,8 +14,11 @@ export default function Button({
   className,
   disabled,
   active,
+  outline,
+  alignTitle = "center",
+  theme = "light",
   ...passProps
-}: ButtonProps) {
+}: IButton) {
   let Comp: React.ElementType = "button";
   const props: React.HTMLProps<HTMLButtonElement> = {
     onClick,
@@ -36,7 +27,9 @@ export default function Button({
 
   const classes = `${styles.wrapper} ${className} ${
     disabled ? styles.disabled : ""
-  } ${active ? styles.active : ""}`;
+  } ${active ? styles.active : ""} ${outline ? styles.outline : ""} ${
+    theme === "dark" ? styles.dark : ""
+  }`;
 
   if (href) {
     Comp = "a";
@@ -52,7 +45,9 @@ export default function Button({
   return (
     <Comp className={classes} {...props}>
       {leftIcon && <span className={styles.icon}>{leftIcon}</span>}
-      <span className={styles.title}>{children}</span>
+      <span className={styles.title} style={{ textAlign: alignTitle }}>
+        {children}
+      </span>
       {rightIcon && <span className={styles.icon}>{rightIcon}</span>}
     </Comp>
   );

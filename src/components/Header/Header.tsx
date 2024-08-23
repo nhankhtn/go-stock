@@ -15,11 +15,13 @@ import { useRouter } from "next/navigation";
 import { useTheme } from "@/hooks";
 import Button from "../Button";
 import { Theme } from "@/_types_";
+import useProfile from "@/hooks/useProfile";
+import { log } from "console";
 
 export default function Header() {
-  const isAuth = true;
   const router = useRouter();
   const { theme, toggleTheme } = useTheme();
+  const { user } = useProfile();
 
   const handleLogin = () => {
     router.push("/auth/login");
@@ -55,17 +57,23 @@ export default function Header() {
         </div>
       </div>
       <div className={styles.right}>
-        {isAuth ? (
+        {!user ? (
           <>
             <Button
               title='Register'
               onClick={handleRegister}
               outline
               theme={theme as Theme}
+              className={styles["btn-login"]}
             >
               Register
             </Button>
-            <Button title='Login' onClick={handleLogin} theme={theme as Theme}>
+            <Button
+              title='Login'
+              onClick={handleLogin}
+              theme={theme as Theme}
+              className={styles["btn-login"]}
+            >
               Login
             </Button>
           </>

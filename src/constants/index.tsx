@@ -69,3 +69,4 @@ export const menuConfig = [
     icon: <FontAwesomeIcon icon={faPhone} />,
   },
 ];
+export const PATTERN_EMAIL = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;

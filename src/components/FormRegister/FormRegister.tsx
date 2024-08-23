@@ -6,22 +6,46 @@ import { useState } from "react";
 import styles from "./FormRegister.module.scss";
 import Button from "../Button";
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
+import { useFormInput, useRegister } from "@/hooks";
 
 export default function FormRegister() {
-  const [isLoading, setLoading] = useState<boolean>(false);
   const [showPassword, setShowPassword] = useState<boolean>(false);
-  const [error, setError] = useState<string>("");
+  const emailInput = useFormInput("");
+  const usernameInput = useFormInput("");
+  const passwordInput = useFormInput("");
+  const { handleRegister, error, isLoading } = useRegister();
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    handleRegister(
+      emailInput.value.trim(),
+      usernameInput.value.trim(),
+      passwordInput.value.trim()
+    );
+  };
 
   return (
     <form className={styles.wrapper}>
       <h3 className={styles.heading}>REGISTER</h3>
       <div className={styles["form-item"]}>
         <label htmlFor='email'>Email</label>
-        <input name='email' id='email' type='text' />
+        <input
+          name='email'
+          id='email'
+          type='text'
+          value={emailInput.value}
+          onChange={emailInput.onChange}
+        />
       </div>
       <div className={styles["form-item"]}>
         <label htmlFor='username'>Username</label>
-        <input name='username' id='username' type='text' />
+        <input
+          name='username'
+          id='username'
+          type='text'
+          value={usernameInput.value}
+          onChange={usernameInput.onChange}
+        />
       </div>
       <div className={styles["form-item"]}>
         <label htmlFor='password'>Password</label>
@@ -30,6 +54,8 @@ export default function FormRegister() {
             name='password'
             id='password'
             type={showPassword ? "text" : "password"}
+            value={passwordInput.value}
+            onChange={passwordInput.onChange}
           />
           <button
             type='button'
@@ -46,10 +72,15 @@ export default function FormRegister() {
       </div>
       {error && <span className={styles["message-error"]}>{error}</span>}
       <div className={styles["more-info"]}>
-        <p>Do you have an account?</p>
+        <a href='/auth/login'>Do you have an account?</a>
         <a href='/auth/login'>Sign in</a>
       </div>
-      <Button type='submit' title='Register' className={styles["btn-submit"]}>
+      <Button
+        type='submit'
+        title='Register'
+        className={styles["btn-submit"]}
+        onClick={handleSubmit}
+      >
         Register
       </Button>
       {isLoading && (

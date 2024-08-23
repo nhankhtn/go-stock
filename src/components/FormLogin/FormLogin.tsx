@@ -5,18 +5,31 @@ import { useState } from "react";
 import styles from "./FormLogin.module.scss";
 import Button from "../Button";
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
+import { useFormInput, useLogin } from "@/hooks";
 
 export default function FormLogin() {
-  const [isLoading, setLoading] = useState<boolean>(false);
   const [showPassword, setShowPassword] = useState<boolean>(false);
-  const [error, setError] = useState<string>("");
+  const emailInput = useFormInput("");
+  const passwordInput = useFormInput("");
+  const { handleLogin, error, isLoading } = useLogin();
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    handleLogin(emailInput.value.trim(), passwordInput.value.trim());
+  };
 
   return (
     <form className={styles.wrapper}>
       <h3 className={styles.heading}>SIGN IN</h3>
       <div className={styles["form-item"]}>
         <label htmlFor='email'>Email</label>
-        <input name='email' id='email' type='text' />
+        <input
+          name='email'
+          id='email'
+          type='text'
+          value={emailInput.value}
+          onChange={emailInput.onChange}
+        />
       </div>
       <div className={styles["form-item"]}>
         <label htmlFor='password'>Password</label>
@@ -25,6 +38,8 @@ export default function FormLogin() {
             name='password'
             id='password'
             type={showPassword ? "text" : "password"}
+            value={passwordInput.value}
+            onChange={passwordInput.onChange}
           />
           <button
             type='button'
@@ -44,7 +59,12 @@ export default function FormLogin() {
         <a href='/auth/reset/password'>Forgot password?</a>
         <a href='/auth/register'>Register</a>
       </div>
-      <Button type='submit' title='Log in' className={styles["btn-submit"]}>
+      <Button
+        type='submit'
+        title='Log in'
+        className={styles["btn-submit"]}
+        onClick={handleSubmit}
+      >
         Log in
       </Button>
       {isLoading && (

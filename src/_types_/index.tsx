@@ -9,7 +9,7 @@ export interface IMenuItem {
 export interface IMenu {
   items: Array<IMenuItem>;
   theme?: Theme;
-  active?: boolean;
+  indexActive?: [number, number?];
 }
 export interface IButton {
   children: React.ReactNode;
@@ -47,6 +47,10 @@ export interface IWatchItem {
 export interface IThemeContext {
   theme: string;
   toggleTheme: () => void;
+}
+export interface IUser {
+  user: object | null;
+  loadUser: (user: object) => void;
 }
 export interface ICharSection {
   theme?: Theme;

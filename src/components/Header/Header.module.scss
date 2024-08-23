@@ -1,5 +1,4 @@
 .wrapper {
-  height: var(--height-header);
   display: flex;
   padding: var(--gap);
 }
@@ -62,7 +61,7 @@
   width: 14px;
   height: 14px;
   position: absolute;
-  right: -7px;
+  right: 0;
   top: 1px;
 }
 .right {
@@ -75,6 +74,9 @@
 .avatar {
   border-radius: 50%;
   object-fit: cover;
+}
+.btn-login {
+  padding: 8px 0 !important;
 }
 // Theme dark
 .dark {

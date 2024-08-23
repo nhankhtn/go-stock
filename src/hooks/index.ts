@@ -1,11 +1,5 @@
-import { useContext } from "react";
-
-import { ThemeContext } from "@/context/Theme";
-
-export const useTheme = () => {
-  const context = useContext(ThemeContext);
-  if (context === undefined) {
-    throw new Error("useTheme must be used within a ThemeProvider");
-  }
-  return context;
-};
+export { default as useFormInput } from "./useFormInput";
+export { default as useLogin } from "./useLogin";
+export { default as useRegister } from "./useRegister";
+export { default as useResetPassword } from "./useResetPassword";
+export { default as useTheme } from "./useTheme";

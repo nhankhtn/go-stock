@@ -9,7 +9,7 @@
 .wrapper {
   background-color: rgb(var(--background-light-color));
   flex: 1;
-  padding: var(--gap);
+  padding: var(--gap) 28px;
   display: flex;
   flex-direction: column;
   gap: var(--gap);
@@ -36,7 +36,8 @@
   flex: 1;
 }
 .watchlist {
-  min-width: 260px;
+  min-width: 320px;
+  width: 32%;
 }
 // Theme dark
 .wrapper.dark {

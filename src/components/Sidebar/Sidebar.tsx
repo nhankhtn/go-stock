@@ -16,6 +16,20 @@ export default function Sidebar() {
   const pathname = usePathname();
   const { theme } = useTheme();
 
+  const getIndexActive = (): [number, number?] | undefined => {
+    for (let i = 0; i < menuNavigate.length; i++) {
+      if (menuNavigate[i].to === pathname) return [i];
+
+      const children = menuNavigate[i].children;
+      if (children) {
+        for (let j = 0; j < children.length; j++) {
+          if (children[j].to === pathname) return [i, j];
+        }
+      }
+    }
+    return undefined;
+  };
+
   return (
     <aside
       className={`${styles.wrapper} ${theme === "dark" ? styles.dark : ""}`}
@@ -27,7 +41,6 @@ export default function Sidebar() {
           width={28}
           height={28}
           alt='Logo'
-          loading='lazy'
         />
         <span className={styles.title}>GoStock</span>
       </div>
@@ -45,7 +58,11 @@ export default function Sidebar() {
         </div>
       </div>
       <div className={styles.navigate}>
-        <Menu items={menuNavigate} theme={theme as Theme} />
+        <Menu
+          items={menuNavigate}
+          indexActive={getIndexActive()}
+          theme={theme as Theme}
+        />
       </div>
       <div className={styles["more-info"]}>
         <Menu items={menuConfig} theme={theme as Theme} />

@@ -70,6 +70,8 @@
 }
 .wrapper-chart {
   flex: 1;
+  display: flex;
+  justify-content: center;
 }
 // Theme dark
 .dark {

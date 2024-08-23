@@ -10,61 +10,16 @@
   --mwidth-sidebar: 200px;
   --gap: 24px;
 
-  --background-color: 256, 256, 256; // Màu nền chính
+  --background-color: 256, 256, 256;
   --background-light-color: 245, 247, 249;
   --red-color: 250, 0, 0;
-  --primary-text-color: 29, 29, 29; // Màu đen đậm, dùng cho văn bản chính
-  // --secondary-text-color: 160, 161, 161; // Màu xám nhạt, dùng cho văn bản phụ
-  // --muted-text-color: 96, 97, 97; // Màu xám trung bình, dùng cho các thông tin ít nổi bật
-  --success-color: 0, 128, 0; // Màu xanh lá cây, dùng cho trạng thái thành công
-  // --success-light-color: 163, 217, 209; // Màu xanh lá cây nhạt, dùng cho các yếu tố thành công nhẹ
-  --danger-color: 239, 93, 95; // Màu đỏ nhạt, dùng cho trạng thái nguy hiểm hoặc lỗi
-  // --success-accent-color: 106, 202, 172; // Màu xanh lá cây nhạt, dùng cho các yếu tố phụ liên quan đến thành công
-  // --success-dark-color: 76, 183, 163; // Màu xanh lá cây trung bình, dùng cho các yếu tố thành công tối hơn
-  // --warning-color: 240, 160, 160; // Màu hồng nhạt, dùng cho cảnh báo nhẹ
-  // --danger-dark-color: 228, 46, 45; // Màu đỏ đậm, dùng cho cảnh báo nghiêm trọng
-  // --positive-color: 28, 213, 93; // Màu xanh lá cây sáng, dùng cho trạng thái tích cực
-  // --navy-color: 11, 35, 119; // Màu xanh dương đậm, dùng cho các yếu tố chính (ví dụ tiêu đề)
-  // --info-color: 16, 151, 234; // Màu xanh dương sáng, dùng cho các thông tin bổ trợ
-  // --info-accent-color: 9, 110, 215; // Màu xanh dương đậm hơn, dùng cho thông tin chi tiết
-  // --deep-navy-color: 8, 47, 133; // Màu xanh dương rất đậm, dùng cho nền hoặc các yếu tố tối màu
+  --primary-text-color: 29, 29, 29;
+  --success-color: 0, 128, 0;
+  --danger-color: 239, 93, 95;
 
   --bg-dark: #3e4364;
   --color-dark: #c8bbbb;
 }
-
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-
-    --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
-    --secondary-glow: linear-gradient(
-      to bottom right,
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0.3)
-    );
-
-    --tile-start-rgb: 2, 13, 46;
-    --tile-end-rgb: 2, 5, 19;
-    --tile-border: conic-gradient(
-      #ffffff80,
-      #ffffff40,
-      #ffffff30,
-      #ffffff20,
-      #ffffff10,
-      #ffffff10,
-      #ffffff80
-    );
-
-    --callout-rgb: 20, 20, 20;
-    --callout-border-rgb: 108, 108, 108;
-    --card-rgb: 100, 100, 100;
-    --card-border-rgb: 200, 200, 200;
-  }
-} */
 
 * {
   box-sizing: border-box;

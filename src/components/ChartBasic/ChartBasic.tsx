@@ -8,10 +8,8 @@ import {
   Title,
   Tooltip,
   Legend,
-  ChartOptions,
 } from "chart.js";
 
-// Đăng ký các thành phần cần thiết
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -31,16 +29,37 @@ const data = {
       data: [90, 85, 70, 60, 55, 50, 45, 40, 35, 30],
       borderColor: "red",
       fill: true,
-      backgroundColor: "rgba(255, 0, 0, 0.1)",
-      borderWidth: 2,
-      tension: 0.4, // Để đường cong mềm mại hơn
+      backgroundColor: "red",
+      pointRadius: 0,
+      pointHoverRadius: 2,
+      spanGaps: true,
+      borderWidth: 1,
+      tension: 0.1,
     },
   ],
 };
 const options = {
   scales: {
-    x: { display: false },
-    y: { display: false },
+    x: {
+      display: true,
+      grid: {
+        display: false,
+        drawBorder: false,
+      },
+      ticks: {
+        display: false,
+      },
+    },
+    y: {
+      display: true,
+      grid: {
+        display: false,
+        drawBorder: false,
+      },
+      ticks: {
+        display: false,
+      },
+    },
   },
   plugins: {
     legend: { display: false },

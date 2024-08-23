@@ -11,7 +11,6 @@ import {
   ChartOptions,
 } from "chart.js";
 
-// Đăng ký các thành phần cần thiết
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -37,7 +36,7 @@ const data = {
       pointRadius: 5,
       pointHoverRadius: 7,
       fill: true,
-      tension: 0.3, // This adds the curved lines
+      tension: 0.3,
     },
   ],
 };

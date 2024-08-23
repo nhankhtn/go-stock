@@ -41,7 +41,8 @@ export default function AuthLayout({
           <FontAwesomeIcon icon={faSun} />
         )}
       </button>
-      <div>{children}</div>
+      <h1 className={styles.title}>GO STOCK</h1>
+      <>{children}</>
     </div>
   );
 }

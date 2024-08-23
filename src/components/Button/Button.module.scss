@@ -50,3 +50,17 @@
     background-color: #14182a !important;
   }
 }
+@media (max-width: 700px) {
+  .wrapper {
+    padding: 6px 0 !important;
+    font-size: 0.8rem;
+  }
+}
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 701px) and (max-width: 1120px) {
+  .wrapper {
+    padding: 6px 0 !important;
+    font-size: 0.8rem;
+  }
+}

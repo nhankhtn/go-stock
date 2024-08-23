@@ -10,9 +10,9 @@ import Button from "../Button/Button";
 import Menu from "../Menu";
 import { menuConfig, menuNavigate } from "@/constants";
 import { useTheme } from "@/hooks";
-import { Theme } from "@/_types_";
+import { ISidebar, Theme } from "@/_types_";
 
-export default function Sidebar() {
+export default function Sidebar({ isOpen }: ISidebar) {
   const pathname = usePathname();
   const { theme } = useTheme();
 
@@ -32,7 +32,9 @@ export default function Sidebar() {
 
   return (
     <aside
-      className={`${styles.wrapper} ${theme === "dark" ? styles.dark : ""}`}
+      className={`${styles.wrapper} ${theme === "dark" ? styles.dark : ""} ${
+        isOpen ? styles.show : ""
+      }`}
     >
       <div className={styles.heading}>
         <Image

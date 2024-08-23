@@ -2,8 +2,10 @@
   width: 100%;
   height: 100%;
   display: flex;
-  padding: 0 28px;
+  padding: 8px 28px;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 // Stats Card
@@ -21,6 +23,7 @@
 .logo {
 }
 .name {
+  flex: 1;
 }
 .chart {
   width: 100px;
@@ -55,5 +58,18 @@
 .dark {
   & .title {
     color: var(--color-dark);
+  }
+}
+/* Mobile */
+@media (max-width: 700px) {
+  .stats-card {
+    width: 100%;
+  }
+}
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 701px) and (max-width: 1120px) {
+  .stats-card {
+    width: 100%;
   }
 }

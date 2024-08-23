@@ -106,7 +106,7 @@ export default function FormResetPassword() {
       </div>
       {error && <span className={styles["message-error"]}>{error}</span>}
       <div className={styles["more-info"]}>
-        <a href='/auth/reset/password'>Haven&apos;t received the code?</a>
+        <p>Haven&apos;t received the code?</p>
         <button type='button' title='Resend codes'>
           Resend
         </button>

@@ -1,19 +1,16 @@
 "use client";
 
 import FormRegister from "@/components/FormRegister";
+import { useTheme } from "@/hooks";
 import styles from "@/styles/Register.module.scss";
 
 export default function Register() {
+  const { theme } = useTheme();
+
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.left}>
-        <h1 className={styles.title}>GO STOCK</h1>
-        <p className={styles.slogan}>Create a Go Stock account quickly</p>
-      </div>
-      <div className={styles.right}>
-        <div className={styles["wrapper-form"]}>
-          <FormRegister />
-        </div>
+    <div className={`${styles.wrapper} ${theme === "dark" ? styles.dark : ""}`}>
+      <div className={styles["wrapper-form"]}>
+        <FormRegister />
       </div>
     </div>
   );

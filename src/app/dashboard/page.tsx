@@ -19,7 +19,7 @@ export default function Dashboard() {
       </div>
       <div className={styles["wrapper-content"]}>
         <div className={styles["chart-section"]}>
-          {/* <ChartSection theme={theme as Theme} /> */}
+          <ChartSection theme={theme as Theme} />
         </div>
         <div className={styles.watchlist}>
           <WatchList />

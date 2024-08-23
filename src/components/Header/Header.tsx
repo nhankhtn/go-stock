@@ -7,21 +7,32 @@ import {
   faMoon,
   faSun,
 } from "@fortawesome/free-regular-svg-icons";
-import { faAngleDown, faSearch } from "@fortawesome/free-solid-svg-icons";
+import {
+  faAngleDown,
+  faBars,
+  faSearch,
+} from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 
 import styles from "./Header.module.scss";
 import { useRouter } from "next/navigation";
 import { useTheme } from "@/hooks";
 import Button from "../Button";
-import { Theme } from "@/_types_";
+import { IHeader, Theme } from "@/_types_";
 import useProfile from "@/hooks/useProfile";
-import { log } from "console";
+import { useEffect, useRef } from "react";
 
-export default function Header() {
+export default function Header({ isOpenSidebar, setOpenSidebar }: IHeader) {
   const router = useRouter();
   const { theme, toggleTheme } = useTheme();
   const { user } = useProfile();
+  const btnMenuRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (btnMenuRef.current?.style.display !== "none") {
+      setOpenSidebar(!isOpenSidebar);
+    }
+  }, []);
 
   const handleLogin = () => {
     router.push("/auth/login");
@@ -35,10 +46,21 @@ export default function Header() {
       className={`${styles.wrapper} ${theme === "dark" ? styles.dark : ""}`}
     >
       <div className={styles.left}>
+        <button
+          type='button'
+          title='Menu'
+          className={styles["btn-menu"]}
+          ref={btnMenuRef}
+          onClick={() => setOpenSidebar(!isOpenSidebar)}
+        >
+          <FontAwesomeIcon icon={faBars} />
+        </button>
         <div className={styles.search}>
           <FontAwesomeIcon icon={faSearch} />
           <input placeholder='Press $ to search for various stocks' />
         </div>
+      </div>
+      <div className={styles.right}>
         <div className={styles["wrapper-btn"]}>
           <button type='button' title='Theme' onClick={toggleTheme}>
             {theme === "light" ? (
@@ -55,42 +77,42 @@ export default function Header() {
             <sup className={styles["sub-info"]}>6</sup>
           </button>
         </div>
-      </div>
-      <div className={styles.right}>
-        {!user ? (
-          <>
-            <Button
-              title='Register'
-              onClick={handleRegister}
-              outline
-              theme={theme as Theme}
-              className={styles["btn-login"]}
-            >
-              Register
-            </Button>
-            <Button
-              title='Login'
-              onClick={handleLogin}
-              theme={theme as Theme}
-              className={styles["btn-login"]}
-            >
-              Login
-            </Button>
-          </>
-        ) : (
-          <>
-            <Image
-              className={styles.avatar}
-              src='/avatar.jpg'
-              alt='avatar'
-              width={28}
-              height={28}
-              loading='lazy'
-            />
-            <span>Duy Nhan</span>
-            <FontAwesomeIcon icon={faAngleDown} />
-          </>
-        )}
+        <div className={styles["user-info"]}>
+          {!user ? (
+            <>
+              <Button
+                title='Register'
+                onClick={handleRegister}
+                outline
+                theme={theme as Theme}
+                className={styles["btn-login"]}
+              >
+                Register
+              </Button>
+              <Button
+                title='Login'
+                onClick={handleLogin}
+                theme={theme as Theme}
+                className={styles["btn-login"]}
+              >
+                Login
+              </Button>
+            </>
+          ) : (
+            <>
+              <Image
+                className={styles.avatar}
+                src='/avatar.jpg'
+                alt='avatar'
+                width={28}
+                height={28}
+                loading='lazy'
+              />
+              <span>Duy Nhan</span>
+              <FontAwesomeIcon icon={faAngleDown} />
+            </>
+          )}
+        </div>
       </div>
     </header>
   );

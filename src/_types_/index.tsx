@@ -55,3 +55,10 @@ export interface IUser {
 export interface ICharSection {
   theme?: Theme;
 }
+export interface IHeader {
+  isOpenSidebar: boolean;
+  setOpenSidebar: (isOpen: boolean) => void;
+}
+export interface ISidebar {
+  isOpen: boolean;
+}

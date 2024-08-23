@@ -83,9 +83,7 @@ export default function FormRegister() {
       >
         Register
       </Button>
-      {isLoading && (
-        <FontAwesomeIcon className={styles.loading} icon={faSpinner} />
-      )}
+      {true && <FontAwesomeIcon className={styles.loading} icon={faSpinner} />}
     </form>
   );
 }

@@ -1,12 +1,27 @@
 .wrapper {
   display: flex;
   padding: var(--gap);
+  gap: 12px;
+  align-items: center;
+  position: fixed;
+  z-index: 2;
+  width: calc(100% - var(--width-sidebar));
+  background-color: #fff;
 }
 .left {
-  flex: 1;
   display: flex;
-  border-right: 1px solid #666;
-  padding-right: 28px;
+  flex: 1;
+  align-items: center;
+}
+.btn-menu {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  color: inherit;
+  padding: 4px 8px;
+  font-size: 1.2rem;
+  margin-right: 4px;
+  display: none;
 }
 .search {
   background-color: rgb(var(--background-light-color));
@@ -14,7 +29,7 @@
   border-radius: 4px;
   display: flex;
   align-items: center;
-  padding: 0 8px 0 16px;
+  padding: 0 16px 0 16px;
 
   & input {
     background-color: transparent;
@@ -36,6 +51,8 @@
   display: flex;
   justify-content: flex-end;
   gap: 20px;
+  border-right: 1px solid #666;
+  padding-right: 16px;
 
   & button {
     font-size: 1.2rem;
@@ -67,10 +84,13 @@
 .right {
   display: flex;
   align-items: center;
-  padding-left: 28px;
   gap: 16px;
 }
-
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
 .avatar {
   border-radius: 50%;
   object-fit: cover;
@@ -91,5 +111,53 @@
     & input {
       color: var(--color-dark);
     }
+  }
+}
+@media (max-width: 700px) {
+  .wrapper {
+    width: 100% !important;
+    flex-direction: column;
+  }
+  .left {
+    width: 100%;
+  }
+  .btn-menu {
+    display: block;
+  }
+  .search {
+    width: 100%;
+    border: 1px solid #666;
+  }
+  .wrapper-btn {
+    gap: 12px;
+  }
+}
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 701px) and (max-width: 1120px) {
+  .wrapper {
+    width: calc(100% - var(--mwidth-sidebar)) !important;
+    flex-direction: column;
+  }
+  .left {
+    width: 100%;
+  }
+  .btn-menu {
+    display: block;
+  }
+  .search {
+    width: 100%;
+    border: 1px solid #666;
+  }
+  .right {
+    width: 100%;
+  }
+  .user-info {
+    flex: 1;
+    justify-content: flex-end;
+  }
+  .wrapper-btn {
+    gap: 12px;
+    justify-content: center;
   }
 }

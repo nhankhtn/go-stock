@@ -34,7 +34,8 @@
 }
 .toggle-password {
   position: absolute;
-  top: 9px;
+  top: 50%;
+  transform: translateY(-50%);
   right: 8px;
   font-size: 1rem;
   background-color: transparent;
@@ -46,6 +47,7 @@
   color: red;
 }
 .more-info {
+  padding-bottom: 12px;
   display: flex;
   font-weight: 500;
   font-size: 0.8rem;
@@ -58,7 +60,7 @@
 }
 .loading {
   position: absolute;
-  bottom: 8px;
+  bottom: 1.2%;
   left: 50%;
   font-size: 28px;
   animation: spinner 0.8s linear infinite;

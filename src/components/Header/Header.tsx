@@ -32,6 +32,7 @@ export default function Header({ isOpenSidebar, setOpenSidebar }: IHeader) {
     if (btnMenuRef.current?.style.display !== "none") {
       setOpenSidebar(!isOpenSidebar);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleLogin = () => {

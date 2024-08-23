@@ -19,6 +19,7 @@ export default function DashboardLayout({
     if (isOpenSidebar && window.innerWidth <= 700) {
       wrapperMainRef.current?.addEventListener("mousedown", handClickOutside);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

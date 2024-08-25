@@ -3,7 +3,7 @@ const kafka = require('../config/kafka');
 
 async function fetchStockData() {
     try {
-        const response = await axios.post('https://stocktraders.vn/service/data/getTotalTradeReal', {
+        const response = await axios.post(process.env.API_REALTIME, {
             TotalTradeRealRequest: { account: 'StockTraders' }
         });
 

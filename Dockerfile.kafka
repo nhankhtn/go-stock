@@ -1,0 +1,6 @@
+FROM confluentinc/cp-kafka:latest
+
+COPY create-topics.sh /usr/bin/create-topics.sh
+RUN chmod +x /usr/bin/create-topics.sh
+
+CMD ["sh", "-c", "create-topics.sh && /etc/confluent/docker/run"]

@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require('express');
 const path = require("path");
 const http = require("http");
@@ -31,6 +32,7 @@ app.get("/", (req, res) => {
     res.sendFile(__dirname + "/test/index.html");
 });
 
-server.listen(3000, async () => {
+const port = process.env.PORT || 8000;
+server.listen(port, async () => {
     console.log('Server running on port 3000');
 });

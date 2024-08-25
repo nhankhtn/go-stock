@@ -5,9 +5,10 @@ import { useState } from "react";
 import styles from "./FormLogin.module.scss";
 import Button from "../Button";
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
-import { useFormInput, useLogin } from "@/hooks";
+import { useFormInput, useLogin, useTheme } from "@/hooks";
 
 export default function FormLogin() {
+  const { theme } = useTheme();
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const emailInput = useFormInput("");
   const passwordInput = useFormInput("");
@@ -19,7 +20,9 @@ export default function FormLogin() {
   };
 
   return (
-    <form className={styles.wrapper}>
+    <form
+      className={`${styles.wrapper} ${theme === "dark" ? styles.dark : ""}`}
+    >
       <h3 className={styles.heading}>SIGN IN</h3>
       <div className={styles["form-item"]}>
         <label htmlFor='email'>Email</label>

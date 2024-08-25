@@ -54,12 +54,21 @@
 .title-banner {
   font-size: 0.8rem;
 }
-.price {
-  font-weight: 400;
-  font-size: 1.2rem;
+.wrap-total {
   display: flex;
   align-items: center;
   gap: 4px;
+  & strong {
+    font-weight: 400;
+    font-size: 1.2rem;
+    min-width: 90px;
+    text-align: center;
+  }
+}
+.toggle-total {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
 }
 .icon-eye {
   width: 12px;

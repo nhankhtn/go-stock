@@ -6,9 +6,10 @@ import { useState } from "react";
 import styles from "./FormRegister.module.scss";
 import Button from "../Button";
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
-import { useFormInput, useRegister } from "@/hooks";
+import { useFormInput, useRegister, useTheme } from "@/hooks";
 
 export default function FormRegister() {
+  const { theme } = useTheme();
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const emailInput = useFormInput("");
   const usernameInput = useFormInput("");
@@ -25,7 +26,9 @@ export default function FormRegister() {
   };
 
   return (
-    <form className={styles.wrapper}>
+    <form
+      className={`${styles.wrapper} ${theme === "dark" ? styles.dark : ""}`}
+    >
       <h3 className={styles.heading}>REGISTER</h3>
       <div className={styles["form-item"]}>
         <label htmlFor='email'>Email</label>
@@ -83,7 +86,9 @@ export default function FormRegister() {
       >
         Register
       </Button>
-      {true && <FontAwesomeIcon className={styles.loading} icon={faSpinner} />}
+      {isLoading && (
+        <FontAwesomeIcon className={styles.loading} icon={faSpinner} />
+      )}
     </form>
   );
 }

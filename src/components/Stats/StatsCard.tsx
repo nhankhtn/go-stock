@@ -48,12 +48,12 @@ export default function StatsCard({
             {formatNumber(totalReturn)}
             {totalReturn >= 0 ? (
               <FontAwesomeIcon
-                className={styles["icon-up-down"]}
+                className={`${styles["icon-up-down"]} l-icon`}
                 icon={faArrowUp}
               />
             ) : (
               <FontAwesomeIcon
-                className={styles["icon-up-down"]}
+                className={`${styles["icon-up-down"]} l-icon`}
                 icon={faArrowDown}
               />
             )}

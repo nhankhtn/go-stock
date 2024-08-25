@@ -57,7 +57,7 @@ export default function Header({ isOpenSidebar, setOpenSidebar }: IHeader) {
           <FontAwesomeIcon icon={faBars} />
         </button>
         <div className={styles.search}>
-          <FontAwesomeIcon icon={faSearch} />
+          <FontAwesomeIcon icon={faSearch} className='m-icon' />
           <input placeholder='Press $ to search for various stocks' />
         </div>
       </div>
@@ -65,16 +65,16 @@ export default function Header({ isOpenSidebar, setOpenSidebar }: IHeader) {
         <div className={styles["wrapper-btn"]}>
           <button type='button' title='Theme' onClick={toggleTheme}>
             {theme === "light" ? (
-              <FontAwesomeIcon icon={faMoon} />
+              <FontAwesomeIcon icon={faMoon} className='l-icon' />
             ) : (
-              <FontAwesomeIcon icon={faSun} />
+              <FontAwesomeIcon icon={faSun} className='l-icon' />
             )}
           </button>
           <button type='button' title='Message'>
-            <FontAwesomeIcon icon={faEnvelope} />
+            <FontAwesomeIcon icon={faEnvelope} className='l-icon' />
           </button>
           <button type='button' title='Notify'>
-            <FontAwesomeIcon icon={faBell} />
+            <FontAwesomeIcon icon={faBell} className='l-icon' />
             <sup className={styles["sub-info"]}>6</sup>
           </button>
         </div>

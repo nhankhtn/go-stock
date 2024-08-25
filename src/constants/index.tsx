@@ -15,26 +15,26 @@ export const menuNavigate = [
   {
     to: "/",
     title: "Home",
-    icon: <FontAwesomeIcon icon={faHouse} />,
+    icon: <i className='ti-home'></i>,
   },
   {
     to: "/dashboard",
     title: "Dashboard",
-    icon: <FontAwesomeIcon icon={faHouse} />,
+    icon: <i className='ti-view-grid'></i>,
   },
   {
     to: "/",
     title: "Wallet",
-    icon: <FontAwesomeIcon icon={faWallet} />,
+    icon: <i className='ti-wallet'></i>,
   },
   {
     to: "/",
     title: "News",
-    icon: <FontAwesomeIcon icon={faNewspaper} />,
+    icon: <i className='ti-agenda'></i>,
   },
   {
     title: "Stock & fund",
-    icon: <FontAwesomeIcon icon={faChartSimple} />,
+    icon: <i className='ti-bar-chart'></i>,
     children: [
       {
         to: "/",

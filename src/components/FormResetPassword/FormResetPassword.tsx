@@ -5,9 +5,10 @@ import { useState } from "react";
 import styles from "./FormResetPassword.module.scss";
 import Button from "../Button";
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
-import { useFormInput, useResetPassword } from "@/hooks";
+import { useFormInput, useResetPassword, useTheme } from "@/hooks";
 
 export default function FormResetPassword() {
+  const { theme } = useTheme();
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const [showRePassword, setShowRePassword] = useState<boolean>(false);
   const emailInput = useFormInput("");
@@ -27,7 +28,9 @@ export default function FormResetPassword() {
   };
 
   return (
-    <form className={styles.wrapper}>
+    <form
+      className={`${styles.wrapper} ${theme === "dark" ? styles.dark : ""}`}
+    >
       <h3 className={styles.heading}>Reset password</h3>
       <div className={styles["form-item"]}>
         <label htmlFor='email'>Email</label>

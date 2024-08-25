@@ -4,17 +4,18 @@ import styles from "./Sidebar.module.scss";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
-import { faEyeSlash } from "@fortawesome/free-regular-svg-icons";
+import { faEyeSlash, faEye } from "@fortawesome/free-regular-svg-icons";
 import { usePathname } from "next/navigation";
-import Button from "../Button/Button";
 import Menu from "../Menu";
 import { menuConfig, menuNavigate } from "@/constants";
 import { useTheme } from "@/hooks";
 import { ISidebar, Theme } from "@/_types_";
+import { useState } from "react";
 
 export default function Sidebar({ isOpen }: ISidebar) {
   const pathname = usePathname();
   const { theme } = useTheme();
+  const [showTotalInvestment, setShowTotalInvestment] = useState<boolean>(true);
 
   const getIndexActive = (): [number, number?] | undefined => {
     for (let i = 0; i < menuNavigate.length; i++) {
@@ -49,10 +50,27 @@ export default function Sidebar({ isOpen }: ISidebar) {
       <div className={styles.banner}>
         <div className={styles["left"]}>
           <p className={styles["title-banner"]}>TotalInvestment</p>
-          <h2 className={styles.price}>
-            $5380,90
-            <FontAwesomeIcon className={styles["icon-eye"]} icon={faEyeSlash} />
-          </h2>
+          <div className={styles["wrap-total"]}>
+            {showTotalInvestment ? (
+              <strong className={styles.price}>$5830,90</strong>
+            ) : (
+              <strong>*****</strong>
+            )}
+            <button
+              className={styles["toggle-total"]}
+              type='button'
+              onClick={(e) => setShowTotalInvestment(!showTotalInvestment)}
+            >
+              {showTotalInvestment ? (
+                <FontAwesomeIcon
+                  className={styles["icon-eye"]}
+                  icon={faEyeSlash}
+                />
+              ) : (
+                <FontAwesomeIcon className={styles["icon-eye"]} icon={faEye} />
+              )}
+            </button>
+          </div>
         </div>
         <div className={styles["right"]}>
           +18,10%

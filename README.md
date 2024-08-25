@@ -13,3 +13,4 @@
 # Run app on production mode
 
 - npm run build
+- npm start

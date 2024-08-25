@@ -28,21 +28,7 @@ const nextConfig = {
                 pathname: '/finschool/wp-content/uploads/**',
             },
         ],
-    },
-    webpack: (config) => {
-        config.module.rules.push({
-            test: /\.(eot|woff|woff2|ttf|svg)$/,
-            use: {
-                loader: 'file-loader',
-                options: {
-                    name: '[name].[ext]',
-                    outputPath: 'static/fonts/',
-                },
-            },
-        });
-
-        return config;
-    },
+    }
 }
 
 export default nextConfig;

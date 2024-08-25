@@ -109,7 +109,7 @@ export default function Header({ isOpenSidebar, setOpenSidebar }: IHeader) {
                 height={28}
                 loading='lazy'
               />
-              <span>Duy Nhan</span>
+              <span>Airlangga Mahesa</span>
               <FontAwesomeIcon icon={faAngleDown} />
             </>
           )}

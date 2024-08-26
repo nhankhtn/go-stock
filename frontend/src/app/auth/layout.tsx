@@ -1,7 +1,6 @@
 "use client";
-import { useTheme } from "@/hooks";
+
 import styles from "@/styles/Auth.module.scss";
-import { faMoon, faSun } from "@fortawesome/free-regular-svg-icons";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useRouter } from "next/navigation";
@@ -12,14 +11,13 @@ export default function AuthLayout({
   children: React.ReactNode;
 }>) {
   const router = useRouter();
-  const { theme, toggleTheme } = useTheme();
 
   const handleBack = () => {
     router.push("/");
   };
 
   return (
-    <div className={`${styles.wrapper} ${theme === "dark" ? styles.dark : ""}`}>
+    <div className={styles.container}>
       <button
         type='button'
         title='Back'
@@ -29,20 +27,72 @@ export default function AuthLayout({
         <FontAwesomeIcon icon={faChevronLeft} />
         <span>Back</span>
       </button>
-      <button
-        type='button'
-        title='Theme'
-        onClick={toggleTheme}
-        className={styles["btn-theme"]}
-      >
-        {theme === "light" ? (
-          <FontAwesomeIcon icon={faMoon} />
-        ) : (
-          <FontAwesomeIcon icon={faSun} />
-        )}
-      </button>
-      <h1 className={styles.title}>GO STOCK</h1>
-      <>{children}</>
+      <div className={styles.wrapper}>
+        <div className={styles["wrapper-form"]}>
+          {children}
+          <div className={styles["wrap-btns"]}>
+            <div className={styles["social-btns"]}>
+              <div className={styles["btn-wrap"]}>
+                <button type='button' title='Email'>
+                  <i className='ti-email'></i>
+                </button>
+                <span className={styles.name}>Email</span>
+              </div>
+              <div className={styles["btn-wrap"]}>
+                <button type='button' title='Facebook'>
+                  <i className='ti-facebook'></i>
+                </button>
+                <span className={styles.name}>Facebook</span>
+              </div>
+              <div className={styles["btn-wrap"]}>
+                <button type='button' title='Instagram'>
+                  <i className='ti-instagram'></i>
+                </button>
+                <span className={styles.name}>Instagram</span>
+              </div>
+            </div>
+            <div className={styles["btn-term"]}>
+              <input type='checkbox' />
+              <p>
+                By signing up I agree with <a href='/'>term and conditions</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className={styles.right}>
+          <div className={styles.heading}>
+            <h2>Sign Up</h2>
+            <p>Using your social media account</p>
+          </div>
+          <div className={styles["social-btns"]}>
+            <div className={styles["btn-wrap"]}>
+              <button type='button' title='Email'>
+                <i className='ti-email'></i>
+              </button>
+              <span className={styles.name}>Email</span>
+            </div>
+            <div className={styles["btn-wrap"]}>
+              <button type='button' title='Facebook'>
+                <i className='ti-facebook'></i>
+              </button>
+              <span className={styles.name}>Facebook</span>
+            </div>
+            <div className={styles["btn-wrap"]}>
+              <button type='button' title='Instagram'>
+                <i className='ti-instagram'></i>
+              </button>
+              <span className={styles.name}>Instagram</span>
+            </div>
+          </div>
+          <div className={styles["btn-term"]}>
+            <input type='checkbox' />
+            <p>
+              By signing up I agree with <a href='/'>term and conditions</a>
+            </p>
+          </div>
+          <div className={styles.footing}>Create account</div>
+        </div>
+      </div>
     </div>
   );
 }

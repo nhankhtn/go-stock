@@ -12,6 +12,13 @@
   --mwidth-sidebar: 200px;
   --gap: 24px;
 
+  --bg-login: linear-gradient(
+    135deg,
+    rgb(240, 132, 127),
+    rgb(188, 143, 162),
+    rgb(143, 152, 192)
+  );
+  --color-login: rgb(240, 132, 127);
   --background-color: 256, 256, 256;
   --background-light-color: 245, 247, 249;
   --red-color: 250, 0, 0;

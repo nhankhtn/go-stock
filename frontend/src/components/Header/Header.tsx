@@ -82,21 +82,21 @@ export default function Header({ isOpenSidebar, setOpenSidebar }: IHeader) {
           {!user ? (
             <>
               <Button
-                title='Register'
+                title='Sign up'
                 onClick={handleRegister}
                 outline
                 theme={theme as Theme}
                 className={styles["btn-login"]}
               >
-                Register
+                Sign up
               </Button>
               <Button
-                title='Login'
+                title='Sign in'
                 onClick={handleLogin}
                 theme={theme as Theme}
                 className={styles["btn-login"]}
               >
-                Login
+                Sign in
               </Button>
             </>
           ) : (

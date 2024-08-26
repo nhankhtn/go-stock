@@ -41,8 +41,10 @@ services:
     depends_on:
       - kafka
       - mongodb
-    env_file:
-      - .env
+    environment:
+      - .env.docker
+    extra_hosts:
+      - 'localhost:host-gateway'
 
 volumes:
   mongodb_data:

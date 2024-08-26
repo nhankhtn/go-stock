@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const stock = require("../controller/StockController")
+const stock = require("../controllers/StockController")
 
 router.get('/stock/realtime', stock.getDataRealtime)
 router.get('/stock/history', stock.getDataHistory)

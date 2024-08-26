@@ -20,6 +20,7 @@ app.use(express.static(path.join(__dirname)));
 mongodb.connect();
 // Create producer kafka
 kafka.runProducer();
+// Create consumer kafka
 kafka.runConsumer();
 // Get data realtime from API 
 fetchStockData();

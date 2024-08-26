@@ -1,9 +1,0 @@
-#content {
-  display: flex;
-  flex-direction: column;
-}
-.item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}

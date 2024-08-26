@@ -37,7 +37,6 @@ export default function ResetPassword() {
     <form className={styles.wrapper}>
       <div className={styles.heading}>
         <h3>Reset password</h3>
-        <p>Please fill in your basic info</p>
       </div>
       <div className={styles["fields"]}>
         <div className={styles["field-item"]}>
